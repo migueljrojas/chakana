@@ -1,3 +1,7 @@
 .home {
-    
+    position: relative;
+
+    &__layer-bottom{
+        position: relative;
+    }
 }

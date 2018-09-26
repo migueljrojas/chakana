@@ -1,8 +1,12 @@
 @import 'node_modules/normalize.css/normalize';
-@import 'bower_components/font-awesome/scss/font-awesome';
+@import 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import 'node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import 'node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import 'node_modules/@fortawesome/fontawesome-free/scss/regular';
 @import './libraries/bootstrap';
 @import 'bower_components/slick-carousel/slick/slick.scss';
 @import './libraries/slick-theme';
+
 @import './libraries/animate';
 @import './libraries/ilightbox-skin';
 @import './libraries/ilightbox';
