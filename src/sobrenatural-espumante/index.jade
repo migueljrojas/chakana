@@ -1,0 +1,53 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.ficha.ficha--espumante
+        .home__layer-content
+            .home__layer-bottom
+                .texture
+                .home__layer-middle
+                    img.draw.draw--dientedeleon(src="/images/home/dientedeleon.png", data-scroll-speed="4")
+                    img.draw.draw--roble(src="/images/home/roble.png", data-scroll-speed="3")
+                    img.draw.draw--manzanilla(src="/images/home/manzanilla.png", data-scroll-speed="5")
+                    img._sello(src="/images/home/sello.png")
+                
+            section#home.ficha__hero
+                .ficha__hero__main
+                    .ficha__bottle
+                        img(src="/images/fichas/botella2.png")
+                    .ficha__data
+                        h1.ficha__title Sobrenatural Tinto 2018 Orgánico, Biodinámico, sin Azufre
+                        img.ficha__underline(src="/images/home/underline-big.png")
+                        ul.ficha__data__list
+                            li
+                                strong Composición varietal
+                                span 100% Bonarda
+                            li
+                                strong Origen
+                                span Finca Nuna, Agrelo, Lujan de Cuyo, Mendoza.
+                            li
+                                strong Altitud
+                                span 960 metros.
+                            li
+                                strong Suelos
+                                span Franco, con manchas franco-arenosas, profundo.
+                            li
+                                strong Viticultura
+                                span Orgánico, Certificado. Biodinamico certificado por Demeter, Vegano, Fair For Life, OGM free
+                            li
+                                strong Clima
+                                span Soleado y seco con una gran amplitud térmica.
+                            li
+                                strong Producción
+                                span 6.000 botellas.
+                            li
+                                strong Crianza
+                                span Fermentación espontánea, segunda fermentación en botella.
+                            li
+                                strong Sulfitos
+                                span Sin sulfitos agregados
+                        a.ficha__cta(href="https://www.chakanawines.com.ar", target="_blank") Ver en tienda        

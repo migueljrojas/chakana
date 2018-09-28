@@ -1,2 +1,33 @@
 header.header
-    
+
+    .header__hamburguer.header__hamburguer--mobile
+        span
+        span
+        span
+        
+    .header__logo
+        a(href="/#home?hideIntro=true")
+            | <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg> 
+
+    ul.header__social
+        li
+            a(href="https://www.facebook.com/bodegachakana/", target="_blank")
+                i.fab.fa-facebook
+        li
+            a(href="https://www.instagram.com/chakanawines/", target="_blank")
+                i.fab.fa-instagram
+                
+    nav.header__nav
+        .header__menu
+            ul
+                each item, index in site.data.header
+                    li
+                        a(href=item.url)
+                            span
+                                |0#{index + 1}
+                            span= item.name
+                            
+                        if item.submenu
+                            .header__submenu
+                                img(src=item.submenu.img)
+            a.-variant(href="/por-que-evitar-azufre") ¿Por qué evitar el AZUFRE?

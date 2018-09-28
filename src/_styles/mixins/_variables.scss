@@ -8,8 +8,9 @@ $lightGray: #ebebeb;
 $lightestGray: #f4f7f8;
 $blue: #053f7a;
 $blueGray: #bbc9c9;
+$green: #bdc3b4;
 
-$mainColor: $blue;
+$mainColor: $darkestGray;
 $link: $mainColor;
 $linkHover: $mainColor + #333;
 $text: $white;
@@ -35,4 +36,5 @@ $duration: 0.3s;
 $easing: cubic-bezier(.785, .135, .15, .86);
 $easingLight: ease;
 
-$mainFont: 'Open Sans', sans-serif;
+$mainFont: 'Prestige Elite', monospace;
+$altFont: 'Golden Plains', Serif;

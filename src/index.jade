@@ -1,7 +1,8 @@
 extends _layouts/base
 
 block content
-    main.home
+    canvas#canvas.home__cover
+    main.home.-hidden
         .home__layer-bottom
             .shape__images.shape__images--top
                 img.shape.shape--top(src="/images/home/shape-top.svg")
@@ -12,5 +13,109 @@ block content
             .shape__images.shape__images--bottom
                 img.shape.shape--bottom(src="/images/home/shape-bottom.svg")
             .texture
-        .home__layer-top
+            .home__layer-middle
+                img.draw.draw--dientedeleon(src="/images/home/dientedeleon.png", data-scroll-speed="4")
+                img.draw.draw--roble(src="/images/home/roble.png", data-scroll-speed="3")
+                img.draw.draw--manzanilla(src="/images/home/manzanilla.png", data-scroll-speed="5")
+                img.draw.draw--valeriana(src="/images/home/valeriana.png", data-scroll-speed="3")
+                img.draw.draw--milenrama(src="/images/home/milenrama.png", data-scroll-speed="5")
+                img.draw.draw--dientedeleon2(src="/images/home/dientedeleon2.png", data-scroll-speed="10")
+                img.draw.draw--coladecaballo(src="/images/home/coladecaballo.png", data-scroll-speed="0")
+                img.draw.draw--valeriana2(src="/images/home/valeriana2.png", data-scroll-speed="7")
+                img.draw.draw--milenrama2(src="/images/home/milenrama2.png", data-scroll-speed="9")
+                img.draw.draw--ortiga(src="/images/home/ortiga.png", data-scroll-speed="0")
+                img.draw.draw--roble2(src="/images/home/roble2.png", data-scroll-speed="25")
+                img.draw.draw--manzanilla2(src="/images/home/manzanilla2.png", data-scroll-speed="0")
+                img.home__sello(src="/images/home/sello.png")
+                img.home__vinedo__image(src="/images/home/vinedo-art.png")
+                
+            .home__layer-top
+                img.imgtop.imgtop--botella1(src="/images/home/botella1.png", data-scroll-speed="2")
+                img.imgtop.imgtop--botella2(src="/images/home/botella2.png", data-scroll-speed="1")
+                img.imgtop.imgtop--uvas(src="/images/home/uvas.png")
         .home__layer-content
+            section#home.home__hero
+                .home__hero__main
+                    img.home__hero__logo(src="/images/home/sobrenatural-logo.png")
+                    p.home__hero__text Nuestra más reciente expresión en el camino de la viticultura responsable y con cada vez menor intervención: 0 de azufre.
+                a.home__hero__winelink.home__hero__winelink--left(href="/sobrenatural-tinto")
+                    img(src="/images/home/left.png")
+                a.home__hero__winelink.home__hero__winelink--right(href="/sobrenatural-espumante")
+                    img(src="/images/home/right.png")
+                a.home__next(href="#crianza")
+                    img(src="/images/home/scroll.png")
+                
+            section#crianza.home__crianza
+                .home__crianza__main
+                    img.home__crianza__title.wow.fadeInUp(src="/images/home/crianza.png")
+                    .home__crianza__content
+                        .home__crianza__col.home__crianza__col--left.wow.fadeInUp
+                            img.home__crianza__icon(src="/images/home/wrong.png")
+                            p El azufre se usa en esta instancia para evitar oxidaciones y preservar la estabilidad biológica del vino.
+                            img._tagline(src="/images/home/estabilidad.png")
+                        .home__crianza__col.home__crianza__col--middle.wow.fadeInUp
+                            img.img-responsive(src="/images/home/barril.png")
+                        .home__crianza__col.home__crianza__col--right.wow.fadeInUp
+                            img.home__crianza__icon(src="/images/home/ok.png")
+                            h3 SIN AZUFRE
+                            img(src="/images/home/underline.png")
+                            p Monitoreamos el oxígeno disuelto permanentemente y rellenamos los recipientes para evitar que actúe, además de remover las borras para que estén en suspensión ya que ayudan a su metabolización.
+                            img._arrow(src="/images/home/flecha.png")
+                            img._tagline(src="/images/home/borras.png")
+                
+                
+            section#fermentacion.home__fermentacion
+                .home__fermentacion__main
+                    img.home__fermentacion__title.wow.fadeInUp(src="/images/home/fermentacion.png")
+                    .home__fermentacion__content
+                        .home__fermentacion__col.home__fermentacion__col--left.wow.fadeInUp
+                            img.home__fermentacion__icon(src="/images/home/wrong.png")
+                            p El azufre se usa al final de la fermentación (alcohólica y maloláctica) para ayudar a la limpieza del vino y controlar los procesos de oxidación.
+                            img._tagline(src="/images/home/metabolizar.png")
+                        .home__fermentacion__col.home__fermentacion__col--middle.wow.fadeInUp
+                            img.img-responsive(src="/images/home/fermentado.png")
+                            img._tagline(src="/images/home/limpieza.png")
+                        .home__fermentacion__col.home__fermentacion__col--right.wow.fadeInUp
+                            img.home__fermentacion__icon(src="/images/home/ok.png")
+                            h3 SIN AZUFRE
+                            img(src="/images/home/underline.png")
+                            p Aquí también los mecanismos de control son similares y se enfocan en metabolizar el oxígeno y evitar su función oxidativa.
+                            img._arrow(src="/images/home/arrow2.png")
+                            img._tagline(src="/images/home/control.png")
+                
+            section#molienda.home__molienda
+                .home__molienda__main
+                    img.home__molienda__title.wow.fadeInUp(src="/images/home/molienda.png")
+                    .home__molienda__content
+                        .home__molienda__col.home__molienda__col--left.wow.fadeInUp
+                            img.home__molienda__icon(src="/images/home/wrong.png")
+                            p El azufre se usa en forma previa a la fermentación por su función bacteriostática y antiséptica para limpiar el medio de bacterias y levaduras.
+                            strong ¿Cuáles?
+                            p Aquellas de bajo poder alcoholigeno, no deseadas industrialmente. Así se facilita el desarrollo de levaduras inoculadas (muchas veces genéticamente modificadas).
+                            img._tagline(src="/images/home/levaduras.png")
+                        .home__molienda__col.home__molienda__col--middle.wow.fadeInUp
+                            img.img-responsive(src="/images/home/molino.png")
+                        .home__molienda__col.home__molienda__col--right.wow.fadeInUp
+                            img.home__molienda__icon(src="/images/home/ok.png")
+                            h3 SIN AZUFRE
+                            img(src="/images/home/underline.png")
+                            p Preferimos que el vino exprese sus características de lugar. También es determinante la uva que molemos y en qué condiciones de pH y alcohol, para asegurar la correcta dinámica microbiológica del vino.
+                            img._arrow(src="/images/home/flecha.png")
+                            img._tagline(src="/images/home/expresion.png")
+                            
+            section#vinedo.home__vinedo
+                .home__vinedo__main
+                    img.home__vinedo__title.wow.fadeInUp(src="/images/home/vinedo.png")
+                    .home__vinedo__content.wow.fadeInUp
+                        .home__vinedo__col.home__vinedo__col--left
+                            strong 1
+                            p 0 agentes externos al ecosistema
+                        img(src="/images/home/separator.png")
+                        .home__vinedo__col.home__vinedo__col--middle
+                            strong 2
+                            p Mínima intervención humana
+                        img(src="/images/home/separator.png")
+                        .home__vinedo__col.home__vinedo__col--right
+                            strong 3
+                            p Autosustentabilidad agrícola
+                    

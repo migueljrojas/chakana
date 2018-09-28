@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Prestige Elite';
+    src: url('PrestigeEliteNormal.eot');
+    src: url('PrestigeEliteNormal.eot?#iefix') format('embedded-opentype'),
+        url('PrestigeEliteNormal.woff2') format('woff2'),
+        url('PrestigeEliteNormal.woff') format('woff'),
+        url('PrestigeEliteNormal.ttf') format('truetype'),
+        url('PrestigeEliteNormal.svg#PrestigeEliteNormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golden Plains';
+    src: url('GoldenPlains.eot');
+    src: url('GoldenPlains.eot?#iefix') format('embedded-opentype'),
+        url('GoldenPlains.woff2') format('woff2'),
+        url('GoldenPlains.woff') format('woff'),
+        url('GoldenPlains.ttf') format('truetype'),
+        url('GoldenPlains.svg#GoldenPlains') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

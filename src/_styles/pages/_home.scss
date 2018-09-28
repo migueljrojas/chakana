@@ -1,7 +1,605 @@
+@mixin section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7%;
+}
+
 .home {
+    @include trans('opacity');
     position: relative;
 
+    &.-hidden {
+        opacity: 0;
+    }
+
+    &__cover {
+        @include trans;
+        background: transparent;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2000;
+
+        &.-hidden {
+            opacity: 0;
+        }
+    }
+
     &__layer-bottom{
+        height: 100%;
+        background: #fde6da;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+
+        @include mq(md){
+            height: auto;
+        }
+    }
+
+    &__layer-middle {
+        mix-blend-mode: multiply;
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        z-index: 5;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__layer-top {
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        z-index: 5;
+    }
+
+    &__layer-content {
         position: relative;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    &__hero {
+        @include section;
+
+        &__main {
+            max-width: 450px;
+            text-align: center;
+        }
+
+        &__logo {
+            width: 90%;
+        }
+
+        &__text {
+            font-family: $altFont;
+            font-size: 24px;
+            color: $darkestGray;
+            text-align: center;
+        }
+
+        &__winelink {
+            position: absolute;
+
+            &--left {
+                left:25%;
+                top: 55%;
+            }
+
+            &--right {
+                right:25%;
+                top: 50%;
+            }
+        }
+    }
+
+    &__sello {
+        position: absolute;
+        right: 15%;
+        top: 15%;
+        mix-blend-mode: multiply;
+        width: 80px;
+
+        @include mq(md) {
+            width: auto;
+            right: 33%;
+            top: 3%;
+        }
+    }
+
+    &__next {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        width: 100px;
+        bottom: 30px;
+        margin: auto;
+    }
+
+    &__crianza,
+    &__fermentacion,
+    &__molienda {
+        @include section;
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px;
+        }
+
+        &__main {
+            text-align: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        &__title {
+            max-width: 100%;
+        }
+
+        &__icon {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        &__col {
+            flex-basis: 30%;
+            position: relative;
+
+            &--left {
+                text-align: right;
+                padding-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                p{
+                    max-width: 250px;
+                    font-size: 14px;
+                }
+            }
+
+            &--right {
+                text-align: left;
+                padding-top: 20px;
+
+                p{
+                    max-width: 250px;
+                    font-size: 14px;
+                }
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &__crianza{
+        margin-bottom: 20%;
+
+        &__col {
+            &--left {
+
+                ._tagline {
+                    position: absolute;
+                    top: 50%;
+                }
+            }
+
+            &--right {
+                ._tagline {
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                ._arrow {
+                    position: absolute;
+                    bottom: 25%;
+                    right: 100%;
+                }
+            }
+        }
+    }
+    &__fermentacion {
+        margin-bottom: 10%;
+
+        &__col {
+            padding-top: 50px;
+            &--left {
+                ._tagline {
+                    position: absolute;
+                    bottom: 90%;
+                    right: 5%;
+                }
+            }
+
+            &--middle {
+                padding-top: 0;
+
+                ._tagline {
+                    position: absolute;
+                    bottom: -10%;
+                    right: -10%;
+                }
+            }
+
+            &--right {
+                ._tagline {
+                    position: absolute;
+                    bottom: 100%;
+                }
+
+                ._arrow {
+                    position: absolute;
+                    top: 5%;
+                    right: 100%;
+                }
+            }
+        }
+    }
+
+    &__molienda {
+        margin-bottom: 12%;
+
+        &__col {
+            &--left {
+                padding-top: 120px;
+                ._tagline {
+                    position: absolute;
+                    top: 70px;
+                    right: 5%;
+                }
+            }
+
+            &--middle {
+                img {
+                    width: 90%;
+                    margin: auto;
+                }
+                ._tagline {
+                    position: absolute;
+                    bottom: -10%;
+                    right: -10%;
+                }
+            }
+
+            &--right {
+                padding-top: 120px;
+                ._tagline {
+                    position: absolute;
+                    top: 85%;
+                }
+
+                ._arrow {
+                    position: absolute;
+                    top: 35%;
+                    right: 100%;
+                }
+            }
+        }
+    }
+
+    &__vinedo {
+        @include section;
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px;
+        }
+
+        &__main {
+            text-align: center;
+            width: 60%;
+            max-width: 600px;
+            margin: auto;
+            padding-bottom: 200px;
+        }
+
+        &__col {
+            flex-basis: 30%;
+            position: relative;
+            text-align: left;
+            padding-top: 15px;
+            display: flex;
+
+            strong {
+                font-size: 32px;
+                margin-right: 10px;
+            }
+
+            p{
+                font-size: 14px;
+            }
+        }
+
+        &__image {
+            mix-blend-mode: multiply;
+            width: 60%;
+            margin: auto;
+            position: absolute;
+            bottom: 0%;
+            left:0;
+            right: 0;
+        }
+    }
+}
+
+.shape {
+    width: 100%;
+    margin-bottom: -70px;
+
+    &--top {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+    }
+}
+
+.draw {
+    position: absolute;
+    display: none;
+
+    @include mq(md){
+        display: block;
+    }
+
+    &--dientedeleon {
+        left: -7%;
+        top:-1.2%;
+    }
+
+    &--roble {
+        left: 10%;
+        top: -3%;
+    }
+
+    &--manzanilla {
+        right: -3%;
+        top: -1.2%;
+    }
+
+    &--valeriana {
+        left: -20%;
+        top: 7%;
+    }
+
+    &--milenrama {
+        right: -20%;
+        top: 4%;
+    }
+
+    &--dientedeleon2 {
+        right: 0%;
+        top:21%;
+    }
+
+    &--coladecaballo {
+        left: -7%;
+        top:31.5%;
+    }
+
+    &--valeriana2 {
+        right: -24%;
+        top:33%;
+    }
+
+    &--ortiga {
+        left: -30%;
+        top:47%;
+    }
+
+    &--milenrama2 {
+        right: -14%;
+        top: 54%;
+    }
+
+    &--roble2 {
+        left: -7%;
+        top: 71%;
+    }
+
+    &--manzanilla2 {
+        right: 0;
+        top: 75%;
+    }
+}
+
+.imgtop {
+    position: absolute;
+
+    &--botella1 {
+        left: 0;
+        top: 11%;
+        width: 120px;
+
+        @include mq(md) {
+            width: auto;
+            top: 2.5%;
+        }
+    }
+
+    &--botella2 {
+        right: 0;
+        top: 11%;
+        width: 120px;
+
+        @include mq(md) {
+            width: auto;
+            top: 2%;
+        }
+    }
+
+    &--uvas {
+        right: 16%;
+        top: 16%;
+        display: none;
+
+        @include mq(md){
+            display: block;
+        }
+    }
+}
+
+.texture {
+    position: absolute;
+    top:0;
+    bottom:-70px;
+    left:0;
+    right:0;
+    z-index: 3;
+    background: url('/images/home/texture.png') repeat;
+    opacity: .3;
+    background-blend-mode: multiply;
+}
+
+.azufre {
+    .home__layer-bottom {
+        bottom: 0;
+    }
+
+    .texture {
+        bottom: 0;
+    }
+
+    &__title {
+        font-family: $altFont;
+        font-size: 72px;
+        max-width:100%;
+    }
+
+    &__underline {
+        width: 200px;
+        margin-bottom: 40px;
+    }
+
+    &__content {
+        text-align: left;
+
+        h2 {
+            margin: 0 0 10px;
+            padding: 10px;
+            background: #ede0d7;
+            font-size: 16px;
+            box-shadow: 0 0 5px rgba(0,0,0,.15);
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 0 0 15px;
+        }
+    }
+
+    &__hero {
+        padding-top: 10%;
+        position: relative;
+        z-index: 10;
+        padding-bottom: 3%;
+
+        &__main {
+            max-width: 450px;
+            margin: auto;
+            text-align: center;
+        }
+    }
+}
+
+.ficha {
+    .home__layer-bottom {
+        bottom: 0;
+    }
+
+    &--espumante {
+        .home__layer-bottom {
+            background: $green;
+        }
+    }
+
+    .texture {
+        bottom: 0;
+    }
+
+    &__hero {
+        padding-top: 10%;
+        position: relative;
+        z-index: 10;
+        padding-bottom: 3%;
+
+        &__main {
+            max-width: 1000px;
+            width: 90%;
+            margin: auto;
+            display: flex;
+        }
+    }
+
+    &__title {
+        font-family: $altFont;
+        font-size: 48px;
+        max-width:100%;
+    }
+
+    &__bottle {
+        flex-basis: 25%;
+        position: relative;
+
+    }
+
+    ._sello {
+        position: absolute;
+        top: 35%;
+        left:25%;
+    }
+
+    &__data {
+        padding-top: 5%;
+        padding-left: 10%;
+
+        &__list {
+            padding-top: 20px;
+            padding-bottom: 10px;
+
+            li {
+                display: flex;
+                margin-bottom: 15px;
+                font-size: 14px;
+
+                strong {
+                    width: 100px;
+                    flex-basis: 100px;
+                    flex-shrink: 0;
+                }
+
+                span {
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+
+    &__cta {
+        height: 40px;
+        padding: 0 30px;
+        border: 1px solid $darkestGray;
+        line-height: 40px;
+        display: inline-block;
     }
 }

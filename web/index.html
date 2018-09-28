@@ -2,8 +2,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>PROYECT TITLE</title>
-  <meta name="description" content="A new Yeogurt application">
+  <title>CHAKANA</title>
+  <meta name="description" content="Sobrenatural">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/main.css">
 </head>
@@ -18,16 +18,107 @@
           </g>
       </symbol>
   </svg>
-  <header class="header"></header>
-  <main class="home">
+  <header class="header">
+    <div class="header__hamburguer header__hamburguer--mobile"><span></span><span></span><span></span></div>
+    <div class="header__logo"><a href="/#home?hideIntro=true"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg> </a></div>
+    <ul class="header__social">
+      <li><a href="https://www.facebook.com/bodegachakana/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="https://www.instagram.com/chakanawines/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+    <nav class="header__nav">
+      <div class="header__menu">
+        <ul>
+          <li><a href="/#crianza"><span>01</span><span>Crianza</span></a>
+            <div class="header__submenu"><img src="/images/home/barril.png"></div>
+          </li>
+          <li><a href="/#fermentacion"><span>02</span><span>Fermentación</span></a>
+            <div class="header__submenu"><img src="/images/home/fermentado.png"></div>
+          </li>
+          <li><a href="/#molienda"><span>03</span><span>Molienda</span></a>
+            <div class="header__submenu"><img src="/images/home/molino.png"></div>
+          </li>
+          <li><a href="/#vinedo"><span>04</span><span>Viñedo</span></a>
+            <div class="header__submenu"><img src="/images/home/vinedo-art.png"></div>
+          </li>
+        </ul><a href="/por-que-evitar-azufre" class="-variant">¿Por qué evitar el AZUFRE?</a>
+      </div>
+    </nav>
+  </header>
+  <canvas id="canvas" class="home__cover"></canvas>
+  <main class="home -hidden">
     <div class="home__layer-bottom">
       <div class="shape__images shape__images--top"><img src="/images/home/shape-top.svg" class="shape shape--top"><img src="/images/home/shape-middle.svg" class="shape shape--middle"></div>
       <div class="shape__images shape__images--middle"><img src="/images/home/shape-middle-pink.svg" class="shape shape--middle-pink"><img src="/images/home/shape-middle-green.svg" class="shape shape--middle-green"></div>
       <div class="shape__images shape__images--bottom"><img src="/images/home/shape-bottom.svg" class="shape shape--bottom"></div>
       <div class="texture"></div>
+      <div class="home__layer-middle"><img src="/images/home/dientedeleon.png" data-scroll-speed="4" class="draw draw--dientedeleon"><img src="/images/home/roble.png" data-scroll-speed="3" class="draw draw--roble"><img src="/images/home/manzanilla.png" data-scroll-speed="5" class="draw draw--manzanilla"><img src="/images/home/valeriana.png" data-scroll-speed="3" class="draw draw--valeriana"><img src="/images/home/milenrama.png" data-scroll-speed="5" class="draw draw--milenrama"><img src="/images/home/dientedeleon2.png" data-scroll-speed="10" class="draw draw--dientedeleon2"><img src="/images/home/coladecaballo.png" data-scroll-speed="0" class="draw draw--coladecaballo"><img src="/images/home/valeriana2.png" data-scroll-speed="7" class="draw draw--valeriana2"><img src="/images/home/milenrama2.png" data-scroll-speed="9" class="draw draw--milenrama2"><img src="/images/home/ortiga.png" data-scroll-speed="0" class="draw draw--ortiga"><img src="/images/home/roble2.png" data-scroll-speed="25" class="draw draw--roble2"><img src="/images/home/manzanilla2.png" data-scroll-speed="0" class="draw draw--manzanilla2"><img src="/images/home/sello.png" class="home__sello"><img src="/images/home/vinedo-art.png" class="home__vinedo__image"></div>
+      <div class="home__layer-top"><img src="/images/home/botella1.png" data-scroll-speed="2" class="imgtop imgtop--botella1"><img src="/images/home/botella2.png" data-scroll-speed="1" class="imgtop imgtop--botella2"><img src="/images/home/uvas.png" class="imgtop imgtop--uvas"></div>
     </div>
-    <div class="home__layer-top"></div>
-    <div class="home__layer-content"></div>
+    <div class="home__layer-content">
+      <section id="home" class="home__hero">
+        <div class="home__hero__main"><img src="/images/home/sobrenatural-logo.png" class="home__hero__logo">
+          <p class="home__hero__text">Nuestra más reciente expresión en el camino de la viticultura responsable y con cada vez menor intervención: 0 de azufre.</p>
+        </div><a href="/sobrenatural-tinto" class="home__hero__winelink home__hero__winelink--left"><img src="/images/home/left.png"></a><a href="/sobrenatural-espumante" class="home__hero__winelink home__hero__winelink--right"><img src="/images/home/right.png"></a><a href="#crianza" class="home__next"><img src="/images/home/scroll.png"></a>
+      </section>
+      <section id="crianza" class="home__crianza">
+        <div class="home__crianza__main"><img src="/images/home/crianza.png" class="home__crianza__title wow fadeInUp">
+          <div class="home__crianza__content">
+            <div class="home__crianza__col home__crianza__col--left wow fadeInUp"><img src="/images/home/wrong.png" class="home__crianza__icon">
+              <p>El azufre se usa en esta instancia para evitar oxidaciones y preservar la estabilidad biológica del vino.</p><img src="/images/home/estabilidad.png" class="_tagline">
+            </div>
+            <div class="home__crianza__col home__crianza__col--middle wow fadeInUp"><img src="/images/home/barril.png" class="img-responsive"></div>
+            <div class="home__crianza__col home__crianza__col--right wow fadeInUp"><img src="/images/home/ok.png" class="home__crianza__icon">
+              <h3>SIN AZUFRE</h3><img src="/images/home/underline.png">
+              <p>Monitoreamos el oxígeno disuelto permanentemente y rellenamos los recipientes para evitar que actúe, además de remover las borras para que estén en suspensión ya que ayudan a su metabolización.</p><img src="/images/home/flecha.png" class="_arrow"><img src="/images/home/borras.png" class="_tagline">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="fermentacion" class="home__fermentacion">
+        <div class="home__fermentacion__main"><img src="/images/home/fermentacion.png" class="home__fermentacion__title wow fadeInUp">
+          <div class="home__fermentacion__content">
+            <div class="home__fermentacion__col home__fermentacion__col--left wow fadeInUp"><img src="/images/home/wrong.png" class="home__fermentacion__icon">
+              <p>El azufre se usa al final de la fermentación (alcohólica y maloláctica) para ayudar a la limpieza del vino y controlar los procesos de oxidación.</p><img src="/images/home/metabolizar.png" class="_tagline">
+            </div>
+            <div class="home__fermentacion__col home__fermentacion__col--middle wow fadeInUp"><img src="/images/home/fermentado.png" class="img-responsive"><img src="/images/home/limpieza.png" class="_tagline"></div>
+            <div class="home__fermentacion__col home__fermentacion__col--right wow fadeInUp"><img src="/images/home/ok.png" class="home__fermentacion__icon">
+              <h3>SIN AZUFRE</h3><img src="/images/home/underline.png">
+              <p>Aquí también los mecanismos de control son similares y se enfocan en metabolizar el oxígeno y evitar su función oxidativa.</p><img src="/images/home/arrow2.png" class="_arrow"><img src="/images/home/control.png" class="_tagline">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="molienda" class="home__molienda">
+        <div class="home__molienda__main"><img src="/images/home/molienda.png" class="home__molienda__title wow fadeInUp">
+          <div class="home__molienda__content">
+            <div class="home__molienda__col home__molienda__col--left wow fadeInUp"><img src="/images/home/wrong.png" class="home__molienda__icon">
+              <p>El azufre se usa en forma previa a la fermentación por su función bacteriostática y antiséptica para limpiar el medio de bacterias y levaduras.</p><strong>¿Cuáles?</strong>
+              <p>Aquellas de bajo poder alcoholigeno, no deseadas industrialmente. Así se facilita el desarrollo de levaduras inoculadas (muchas veces genéticamente modificadas).</p><img src="/images/home/levaduras.png" class="_tagline">
+            </div>
+            <div class="home__molienda__col home__molienda__col--middle wow fadeInUp"><img src="/images/home/molino.png" class="img-responsive"></div>
+            <div class="home__molienda__col home__molienda__col--right wow fadeInUp"><img src="/images/home/ok.png" class="home__molienda__icon">
+              <h3>SIN AZUFRE</h3><img src="/images/home/underline.png">
+              <p>Preferimos que el vino exprese sus características de lugar. También es determinante la uva que molemos y en qué condiciones de pH y alcohol, para asegurar la correcta dinámica microbiológica del vino.</p><img src="/images/home/flecha.png" class="_arrow"><img src="/images/home/expresion.png" class="_tagline">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="vinedo" class="home__vinedo">
+        <div class="home__vinedo__main"><img src="/images/home/vinedo.png" class="home__vinedo__title wow fadeInUp">
+          <div class="home__vinedo__content wow fadeInUp">
+            <div class="home__vinedo__col home__vinedo__col--left"><strong>1</strong>
+              <p>0 agentes externos al ecosistema</p>
+            </div><img src="/images/home/separator.png">
+            <div class="home__vinedo__col home__vinedo__col--middle"><strong>2</strong>
+              <p>Mínima intervención humana</p>
+            </div><img src="/images/home/separator.png">
+            <div class="home__vinedo__col home__vinedo__col--right"><strong>3</strong>
+              <p>Autosustentabilidad agrícola</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
   <footer class="footer"></footer>
   <script src="./scripts/main.js"></script>

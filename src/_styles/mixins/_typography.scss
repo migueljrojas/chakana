@@ -1,3 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600');
-
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@font-face {
+    font-family: 'Prestige Elite';
+    src: url('/fonts/PrestigeEliteNormal.eot');
+    src: url('/fonts/PrestigeEliteNormal.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/PrestigeEliteNormal.woff2') format('woff2'),
+        url('/fonts/PrestigeEliteNormal.woff') format('woff'),
+        url('/fonts/PrestigeEliteNormal.ttf') format('truetype'),
+        url('/fonts/PrestigeEliteNormal.svg#PrestigeEliteNormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golden Plains';
+    src: url('/fonts/GoldenPlains.eot');
+    src: url('/fonts/GoldenPlains.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/GoldenPlains.woff2') format('woff2'),
+        url('/fonts/GoldenPlains.woff') format('woff'),
+        url('/fonts/GoldenPlains.ttf') format('truetype'),
+        url('/fonts/GoldenPlains.svg#GoldenPlains') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

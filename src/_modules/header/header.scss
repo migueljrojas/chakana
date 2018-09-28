@@ -2,14 +2,21 @@
 
     $h: &;
 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    z-index: 1000;
+
     &__hamburguer {
         cursor: pointer;
         width: 25px;
         height: 25px;
         margin: auto;
         position: absolute;
-        right: 32px;
+        left: 5%;
         top: 30px;
+        z-index: 100;
 
         span {
             background-color: $mainColor;
@@ -35,6 +42,135 @@
         }
     }
 
+    &__logo {
+        @include trans;
+
+        height: 30px;
+        width: 170px;
+        position: absolute;
+        top: 30px;
+        z-index: 100;
+        left:0;
+        right:0;
+        margin: auto;
+
+        svg {
+            fill: $darkestGray;
+            position: absolute;
+            left:0;
+            top:0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__social {
+        position: absolute;
+        right:5%;
+        display: flex;
+        top: 30px;
+
+        li {
+            margin-left: 10px;
+
+            @include mq(md) {
+                margin-left: 30px;
+            }
+        }
+
+        a {
+            font-size: 21px;
+        }
+    }
+
+    &__nav {
+        @include trans;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        transform: translateX(-100%);
+    }
+
+    &__menu {
+        @include trans;
+
+        position: absolute;
+        left: 0;
+        top:0;
+        bottom: 0;
+        width: 100%;
+        background: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 15%;
+
+        li {
+            margin-bottom: 20px;
+
+            &:hover {
+
+                .header__submenu {
+                    z-index: 5;
+
+                    img {
+                        opacity: 1;
+                    }
+                }
+
+                a {
+                    font-weight: bold;
+
+                    span:first-child {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        a {
+            font-size: 28px;
+            display: block;
+
+            &.-variant {
+                font-size: 18px;
+                padding-left: 60px;
+            }
+
+            span {
+                &:first-child {
+                    @include trans;
+                    margin-right: 30px;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &__submenu {
+        display: none;
+        position: absolute;
+        right: 0;
+        top:0;
+        bottom: 0;
+        width: 30%;
+        background: $green;
+        justify-content: center;
+        align-items: center;
+
+        @include mq(md){
+            display: flex;
+        }
+
+        img {
+            @include trans;
+            opacity: 0;
+            width: 70%;
+        }
+    }
+
     &.-open {
         #{$h}__hamburguer {
             span:nth-child(1) {
@@ -49,7 +185,7 @@
         }
 
         #{$h}__nav {
-
+            transform: translateX(0);
         }
     }
 }

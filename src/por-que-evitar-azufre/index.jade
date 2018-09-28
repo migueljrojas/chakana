@@ -1,0 +1,33 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.azufre
+        .home__layer-content
+            .home__layer-bottom
+                .texture
+                .home__layer-middle
+                    img.draw.draw--dientedeleon(src="/images/home/dientedeleon.png", data-scroll-speed="4")
+                    img.draw.draw--roble(src="/images/home/roble.png", data-scroll-speed="3")
+                    img.draw.draw--manzanilla(src="/images/home/manzanilla.png", data-scroll-speed="5")
+                
+                .home__layer-top
+                    img.imgtop.imgtop--botella1(src="/images/home/botella1.png", data-scroll-speed="2")
+                    img.imgtop.imgtop--botella2(src="/images/home/botella2.png", data-scroll-speed="1")
+            
+            section#home.azufre__hero
+                .azufre__hero__main
+                    h1.azufre__title ¿Por qué evitar el azufre?
+                    img.azufre__underline(src="/images/home/underline.png")
+                    .azufre__content
+                        h2 En lo que hace al vino en sí mismo
+                        p El sulfuroso (SO2) tiende a encapsular el vino aromática y estructuralmente; le quitar aromas y texturas. Puede generar aromas de "reducción" y en los peores casos, aromas a fósforo y hasta huevo podrido. 
+                        h2 En lo que hace al consumidor y su salud
+                        p El sulfuroso (SO2) es un antiséptico que afecta la flora intestinal, alterando estómago, riñones, intestino e hígado. Es común que este desorden se refleje con un dolor de cabeza, así como con una digestión más lenta y obstaculizada (por las bacterias útiles que mata).
+                        h2 Además...
+                        p Recientemente, la utilización de sulfuroso como conservante alimentario se ha asociado con algunos riesgos para la salud. Se ha relacionado a los sulfitos resultantes de la adición de sulfuroso en el vino con reacciones alérgicas en algunos consumidores. Los individuos sensibles a los sulfitos reaccionan negativamente a su ingestión a partir de 10 mg. de ingesta. Es por ello que en el caso de vinos con concentraciones de sulfuroso mayores a dicha medida se debe indicar la presencia de sulfitos en la etiqueta. Los individuos sensibles pueden experimentar una variedad de síntomas que incluyen dermatitis, urticaria, angioedema, dolor abdominal, diarrea, broncoconstricción y anafilaxia.
+                        p Los asmáticos que son dependientes de los esteroides o que tienen un mayor grado de hipersensibilidad de las vías respiratorias están en mayor riesgo de sufrir una reaccio´n a los alimentos que contienen sulfitos. En este tipo de población, las reacciones de sensibilidad a los sulfitos pueden ser severas, ya que los derivados del sulfuroso pueden jugar un papel negativo en el cáncer de pulmo´n. El exceso de sulfuroso tiene efectos tóxicos en la salud humana, pudiendo producir dolores de cabeza, na´useas y reacciones asma´ticas. Asi´, se ha visto la necesidad de reducir la cantidad de sulfuroso, ya que este compuesto no so´lo se encuentra en el vino, sino que adema´s se encuentra en muchos productos alimenticios como aditivo y la cantidad consumida es acumulativa en el organismo. 
+                        p Para hacernos una idea, se suele añadir a los mostos una concentracio´n aproximada de 80 mg/L de sulfuroso para vinos blancos y 50 mg/L para vinos tintos. Más del 50% de la cantidad an~adida inicialmente termina como formas combinadas, que no tienen actividades antise´pticas ni antioxidantes. Pero por desgracia, todavía conserva sus contraindicaciones relacionadas con la salud. 

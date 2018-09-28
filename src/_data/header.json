@@ -1,6 +1,30 @@
 [
     {
-        "name":"",
-        "url":""
+        "name":"Crianza",
+        "url":"/#crianza",
+        "submenu":{
+            "img":"/images/home/barril.png"
+        }
+    },
+    {
+        "name":"Fermentación",
+        "url":"/#fermentacion",
+        "submenu":{
+            "img":"/images/home/fermentado.png"
+        }
+    },
+    {
+        "name":"Molienda",
+        "url":"/#molienda",
+        "submenu":{
+            "img":"/images/home/molino.png"
+        }
+    },
+    {
+        "name":"Viñedo",
+        "url":"/#vinedo",
+        "submenu":{
+            "img":"/images/home/vinedo-art.png"
+        }
     }
 ]
