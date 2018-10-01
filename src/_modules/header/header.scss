@@ -5,8 +5,13 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background: transparent;
+    background: $white;
     z-index: 1000;
+    height: 60px;
+
+    @include mq(md) {
+        height: 90px;
+    }
 
     &__hamburguer {
         cursor: pointer;
@@ -15,8 +20,12 @@
         margin: auto;
         position: absolute;
         left: 5%;
-        top: 30px;
+        top: 20px;
         z-index: 100;
+
+        @include mq(md) {
+            top: 30px;
+        }
 
         span {
             background-color: $mainColor;
@@ -45,14 +54,19 @@
     &__logo {
         @include trans;
 
-        height: 30px;
-        width: 170px;
+        height: 40px;
+        width: 180px;
         position: absolute;
-        top: 30px;
+        top: 10px;
         z-index: 100;
-        left:0;
-        right:0;
+        left:50px;
         margin: auto;
+
+        @include mq(md) {
+            top: 25px;
+            left:0;
+            right:0;
+        }
 
         svg {
             fill: $darkestGray;
@@ -68,7 +82,11 @@
         position: absolute;
         right:5%;
         display: flex;
-        top: 30px;
+        top: 20px;
+
+        @include mq(md) {
+            top: 30px;
+        }
 
         li {
             margin-left: 10px;
@@ -105,7 +123,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 15%;
+        padding-left: 15px;
+
+        @include mq(md) {
+            padding-left: 15%;
+        }
 
         li {
             margin-bottom: 20px;
@@ -136,14 +158,24 @@
 
             &.-variant {
                 font-size: 18px;
-                padding-left: 60px;
+                padding-left: 30px;
+                margin-bottom: 20px;
+
+                @include mq(md) {
+                    padding-left: 60px;
+                    margin-bottom: 40px;
+                }
             }
 
             span {
                 &:first-child {
                     @include trans;
-                    margin-right: 30px;
+                    margin-right: 10px;
                     opacity: 0;
+
+                    @include mq(md) {
+                        margin-right: 30px;
+                    }
                 }
             }
         }

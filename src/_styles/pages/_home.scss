@@ -5,14 +5,42 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 7%;
+
+    @include customMq(1600px) {
+        margin-bottom: 15%;
+    }
 }
 
 .home {
-    @include trans('opacity');
+    @include trans;
     position: relative;
 
     &.-hidden {
         opacity: 0;
+    }
+
+    &__nav {
+        list-style: none;
+        position: fixed;
+        right: 10px;
+        top: 50vh;
+        transform: translateY(-50%);
+        z-index: 100;
+
+        li {
+            @include trans;
+            width: 5px;
+            height: 5px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            opacity: .5;
+            background: $darkestGray;
+
+            &.-active {
+                transform: scale3d(2,2,2);
+                opacity: 1;
+            }
+        }
     }
 
     &__cover {
@@ -74,6 +102,14 @@
     &__hero {
         @include section;
 
+        align-items: flex-start;
+        padding-top: 100px;
+
+        @include mq(md){
+            align-items: center;
+            padding-top: 0;
+        }
+
         &__main {
             max-width: 450px;
             text-align: center;
@@ -84,38 +120,62 @@
         }
 
         &__text {
-            font-family: $altFont;
-            font-size: 24px;
+            font-family: $mainFont;
+            font-size: 21px;
             color: $darkestGray;
             text-align: center;
+
+            // @include mq(md) {
+            //     font-size: 32px;
+            // }
         }
 
         &__winelink {
+            @include trans;
             position: absolute;
 
             &--left {
-                left:25%;
+                left:5%;
                 top: 55%;
+                animation: sideWaysLeft 1s infinite ease;
+
+                @include mq(md) {
+                    left:25%;
+                    top: 55%;
+                }
             }
 
             &--right {
-                right:25%;
-                top: 50%;
+                right:5%;
+                top: 55%;
+                animation: sideWaysRight 1s infinite ease;
+
+                @include mq(md) {
+                    right:25%;
+                    top: 50%;
+                }
+            }
+
+            &:hover {
+                filter:brightness(200%);
             }
         }
     }
 
     &__sello {
         position: absolute;
-        right: 15%;
-        top: 15%;
+        right: 0;
+        left: 0;
+        top: 10%;
         mix-blend-mode: multiply;
         width: 80px;
+        margin: auto;
 
         @include mq(md) {
             width: auto;
             right: 33%;
             top: 3%;
+            left: auto;
         }
     }
 
@@ -127,6 +187,7 @@
         width: 100px;
         bottom: 30px;
         margin: auto;
+        animation: downWard 1s ease infinite;
     }
 
     &__crianza,
@@ -157,8 +218,12 @@
         }
 
         &__col {
-            flex-basis: 30%;
+            flex-basis: 50%;
             position: relative;
+
+            @include mq(md) {
+                flex-basis: 30%;
+            }
 
             &--left {
                 text-align: right;
@@ -166,6 +231,11 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
+                padding-right: 10px;
+
+                @include mq(md) {
+                    padding-left: 0;
+                }
 
                 p{
                     max-width: 250px;
@@ -176,6 +246,11 @@
             &--right {
                 text-align: left;
                 padding-top: 20px;
+                padding-left: 10px;
+
+                @include mq(md) {
+                    padding-left: 0;
+                }
 
                 p{
                     max-width: 250px;
@@ -188,11 +263,36 @@
                     margin: 0;
                 }
             }
+
+            &--middle {
+                opacity: .15;
+                position: absolute;
+                left: 0;
+                right: 0;
+
+                img {
+                    opacity: .15;
+
+                    @include mq(md) {
+                        opacity: 1;
+                        position: static;
+                    }
+                }
+
+                @include mq(md) {
+                    opacity: 1;
+                    position: static;
+                }
+            }
         }
     }
 
     &__crianza{
-        margin-bottom: 20%;
+        margin-bottom: 18%;
+
+        @include customMq(1600px) {
+            margin-bottom: 20%;
+        }
 
         &__col {
             &--left {
@@ -218,7 +318,11 @@
         }
     }
     &__fermentacion {
-        margin-bottom: 10%;
+        margin-bottom: 15%;
+
+        @include customMq(1600px) {
+            margin-bottom: 20%;
+        }
 
         &__col {
             padding-top: 50px;
@@ -256,11 +360,20 @@
     }
 
     &__molienda {
-        margin-bottom: 12%;
+        margin-bottom: 7%;
+
+        @include customMq(1600px) {
+            margin-bottom: 20%;
+        }
 
         &__col {
             &--left {
-                padding-top: 120px;
+                padding-top: 10px;
+
+                @include mq(md) {
+                    padding-top: 120px;
+                }
+
                 ._tagline {
                     position: absolute;
                     top: 70px;
@@ -281,7 +394,12 @@
             }
 
             &--right {
-                padding-top: 120px;
+                padding-top: 10px;
+
+                @include mq(md) {
+                    padding-top: 120px;
+                }
+
                 ._tagline {
                     position: absolute;
                     top: 85%;
@@ -289,8 +407,13 @@
 
                 ._arrow {
                     position: absolute;
-                    top: 35%;
-                    right: 100%;
+                    top: 70%;
+                    right: 60%;
+
+                    @include mq(md) {
+                        top: 35%;
+                        right: 100%;
+                    }
                 }
             }
         }
@@ -298,19 +421,29 @@
 
     &__vinedo {
         @include section;
+        height: 105vh;
 
         &__content {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             padding-top: 15px;
+
+            @include mq(md) {
+                flex-wrap: nowrap;
+            }
         }
 
         &__main {
             text-align: center;
-            width: 60%;
+            width: 90%;
             max-width: 600px;
             margin: auto;
             padding-bottom: 200px;
+
+            @include mq(md) {
+                width: 60%;
+            }
         }
 
         &__col {
@@ -335,9 +468,40 @@
             width: 60%;
             margin: auto;
             position: absolute;
-            bottom: 0%;
+            top: 93%;
             left:0;
             right: 0;
+
+            @include mq(md) {
+                top: 88%;
+            }
+        }
+
+        &__azufre {
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
+            text-align: center;
+
+            @include mq(md){
+                bottom: -15%;
+            }
+
+            @include customMq(1600px) {
+                bottom: -22%;
+            }
+
+            span {
+                display: block;
+                font-family: $altFont;
+                font-size: 28px;
+
+                @include mq(md){
+                    font-size: 48px;
+                }
+            }
         }
     }
 }
@@ -432,7 +596,8 @@
 
         @include mq(md) {
             width: auto;
-            top: 2.5%;
+            top: 1.2%;
+            max-width: 500px;
         }
     }
 
@@ -443,7 +608,8 @@
 
         @include mq(md) {
             width: auto;
-            top: 2%;
+            top: 1%;
+            max-width: 500px;
         }
     }
 
@@ -475,14 +641,32 @@
         bottom: 0;
     }
 
+    .home__layer-top {
+        .imgtop {
+            top: 80px;
+
+            @include mq(md) {
+                top: 1%;
+            }
+        }
+    }
+
     .texture {
         bottom: 0;
     }
 
     &__title {
         font-family: $altFont;
-        font-size: 72px;
+        font-size: 32px;
         max-width:100%;
+        padding-top: 60px;
+        text-shadow: 1px 1px 0 #fff;
+
+        @include mq(md) {
+            font-size: 72px;
+            padding-top:0;
+            text-shadow: none;
+        }
     }
 
     &__underline {
@@ -492,6 +676,11 @@
 
     &__content {
         text-align: left;
+        padding-top: 60px;
+
+        @include mq(md) {
+            padding-top: 0;
+        }
 
         h2 {
             margin: 0 0 10px;
@@ -505,6 +694,11 @@
         p {
             font-size: 14px;
             margin: 0 0 15px;
+            padding: 0 15px;
+
+            @include mq(md){
+                padding: 0;
+            }
         }
     }
 
@@ -512,7 +706,11 @@
         padding-top: 10%;
         position: relative;
         z-index: 10;
-        padding-bottom: 3%;
+        padding-bottom: 10%;
+
+        @include mq(md) {
+            padding-bottom: 3%;
+        }
 
         &__main {
             max-width: 450px;
@@ -523,6 +721,8 @@
 }
 
 .ficha {
+    padding-top: 70px;
+
     .home__layer-bottom {
         bottom: 0;
     }
@@ -537,8 +737,15 @@
         bottom: 0;
     }
 
+    &__back {
+        i {
+            font-size: 0.8em;
+            margin-right: 7px;
+        }
+    }
+
     &__hero {
-        padding-top: 10%;
+        padding-top: 8%;
         position: relative;
         z-index: 10;
         padding-bottom: 3%;
@@ -553,34 +760,68 @@
 
     &__title {
         font-family: $altFont;
-        font-size: 48px;
+        font-size: 24px;
         max-width:100%;
+
+        @include mq(md) {
+            font-size: 48px;
+        }
     }
 
     &__bottle {
         flex-basis: 25%;
         position: relative;
 
+        img {
+            width: 70px;
+
+            @include mq(md) {
+                width: auto;
+            }
+        }
+
+    }
+
+    &__underline {
+        max-width: 100%;
     }
 
     ._sello {
         position: absolute;
         top: 35%;
-        left:25%;
+        left:10px;
+        max-width: 90px;
+
+        @include mq(md) {
+            left:25%;
+            top: 35%;
+            max-width: none;
+        }
     }
 
     &__data {
-        padding-top: 5%;
-        padding-left: 10%;
+        padding-top: 0;
+        padding-left: 20px;
+
+        @include mq(md){
+            padding-top: 5%;
+            padding-left: 10%;
+        }
 
         &__list {
             padding-top: 20px;
             padding-bottom: 10px;
+            padding-right: 10px;
+
+            @include mq(md) {
+                padding-right: 0;
+            }
 
             li {
                 display: flex;
                 margin-bottom: 15px;
                 font-size: 14px;
+
 
                 strong {
                     width: 100px;
@@ -589,7 +830,11 @@
                 }
 
                 span {
-                    padding-left: 20px;
+                    padding-left: 10px;
+
+                    @include mq(md) {
+                        padding-left: 20px;
+                    }
                 }
             }
         }
@@ -601,5 +846,47 @@
         border: 1px solid $darkestGray;
         line-height: 40px;
         display: inline-block;
+    }
+}
+
+@keyframes sideWaysLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-30%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes sideWaysRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(30%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes downWard {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(30%);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }

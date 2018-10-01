@@ -6,7 +6,7 @@ header.header
         span
         
     .header__logo
-        a(href="/#home?hideIntro=true")
+        a(href="/#home")
             | <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg> 
 
     ul.header__social
@@ -16,6 +16,10 @@ header.header
         li
             a(href="https://www.instagram.com/chakanawines/", target="_blank")
                 i.fab.fa-instagram
+        li
+            a(href="https://twitter.com/chakanawines", target="_blank")
+                i.fab.fa-twitter
+                
                 
     nav.header__nav
         .header__menu
@@ -23,11 +27,12 @@ header.header
                 each item, index in site.data.header
                     li
                         a(href=item.url)
-                            span
-                                |0#{index + 1}
+                            span= item.index
                             span= item.name
                             
                         if item.submenu
                             .header__submenu
                                 img(src=item.submenu.img)
             a.-variant(href="/por-que-evitar-azufre") ¿Por qué evitar el AZUFRE?
+            a.-variant(href="https://www.chakanawines.com.ar", target="_blank") Tienda online
+            a.-variant(href="https://www.chakanawines.com.ar/blog", target="_blank") Blog

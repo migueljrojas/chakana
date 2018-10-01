@@ -2,6 +2,7 @@
     {
         "name":"Crianza",
         "url":"/#crianza",
+        "index":"04",
         "submenu":{
             "img":"/images/home/barril.png"
         }
@@ -9,6 +10,7 @@
     {
         "name":"Fermentación",
         "url":"/#fermentacion",
+        "index":"03",
         "submenu":{
             "img":"/images/home/fermentado.png"
         }
@@ -16,6 +18,7 @@
     {
         "name":"Molienda",
         "url":"/#molienda",
+        "index":"02",
         "submenu":{
             "img":"/images/home/molino.png"
         }
@@ -23,6 +26,7 @@
     {
         "name":"Viñedo",
         "url":"/#vinedo",
+        "index":"01",
         "submenu":{
             "img":"/images/home/vinedo-art.png"
         }

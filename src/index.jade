@@ -3,6 +3,13 @@ extends _layouts/base
 block content
     canvas#canvas.home__cover
     main.home.-hidden
+        ul.home__nav
+            li.-active
+            li
+            li
+            li
+            li
+            
         .home__layer-bottom
             .shape__images.shape__images--top
                 img.shape.shape--top(src="/images/home/shape-top.svg")
@@ -106,6 +113,7 @@ block content
             section#vinedo.home__vinedo
                 .home__vinedo__main
                     img.home__vinedo__title.wow.fadeInUp(src="/images/home/vinedo.png")
+                    p.home__vinedo__text En esta instancia el azufre no se suele utilizar, pero siempre es bueno recordar las principales prácticas que rigen nuestra filosofía:
                     .home__vinedo__content.wow.fadeInUp
                         .home__vinedo__col.home__vinedo__col--left
                             strong 1
@@ -118,4 +126,7 @@ block content
                         .home__vinedo__col.home__vinedo__col--right
                             strong 3
                             p Autosustentabilidad agrícola
+                    a.home__vinedo__azufre(href="/por-que-evitar-azufre")
+                        span ¿Por qué evitar el Azufre?
+                        img(src="/images/home/underline-big.png")
                     
